@@ -5,12 +5,16 @@ function ExpenseList({ expenses, onDelete }) {
     <div>
       <h2>Expense List</h2>
       <ul>
-        {expenses.map((expense) => (
-          <li key={expense.id}>
-            {expense.description} - ${expense.amount} - {expense.date}
-            <button onClick={() => onDelete(expense.id)}>Delete</button>
-          </li>
-        ))}
+        {expenses.length === 0 ? (
+          <li>No expenses found matching the search criteria.</li>
+        ) : (
+          expenses.map((expense) => (
+            <li key={expense.id}>
+              {expense.description} - Kshs {expense.amount} - {new Date(expense.date).toLocaleDateString()}
+              <button onClick={() => onDelete(expense.id)}>Delete</button>
+            </li>
+          ))
+        )}
       </ul>
     </div>
   );

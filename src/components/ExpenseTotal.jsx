@@ -5,7 +5,7 @@ function ExpenseTotal({ expenses }) {
 
   return (
     <div style={{ marginTop: '1.5rem' }}>
-      <h2>Total Expenses: ${total.toFixed(2)}</h2>
+      <h2>Total Expenses: Kshs {total.toFixed(2)}</h2>
     </div>
   );
 }
